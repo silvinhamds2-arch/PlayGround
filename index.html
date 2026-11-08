@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101319">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Shinobi Clash — Ninja Showdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Shinobi Clash home"><span class="brand-mark">忍</span><span>SHINOBI<span class="brand-light">CLASH</span></span></a>
+      <div class="top-note"><span class="live-dot"></span> THE HIDDEN LEAF • OPEN CHALLENGE</div>
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+    </header>
+
+    <section id="menuScreen" class="screen menu-screen">
+      <div class="menu-copy">
+        <p class="eyebrow"><span>01</span> &nbsp; THE WAY OF THE SHINOBI</p>
+        <h1>FIND YOUR<br><span>INNER</span> NINJA.</h1>
+        <p class="intro">Five legends. One arena. Choose your fighter and prove your way of the ninja.</p>
+        <div class="menu-meta"><span class="keycap">P1</span> SELECT YOUR SHINOBI <span class="meta-rule"></span> <span>BEST OF 3</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun-disc"></div><div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div>
+        <div class="hero-kanji">忍</div>
+        <div class="hero-silhouette"><i></i><b></b><em></em><span></span></div>
+        <div class="hero-caption"><span>木ノ葉</span><small>WILL OF FIRE</small></div>
+      </div>
+
+      <div class="selection-panel">
+        <div class="selection-heading"><div><span class="eyebrow">CHOOSE YOUR FIGHTER</span><h2>SELECT A SHINOBI <span>↘</span></h2></div><div class="selection-hint">TAP A CARD TO SELECT <b>✦</b></div></div>
+        <div class="character-grid" id="characterGrid" role="listbox" aria-label="Choose your fighter"></div>
+        <div class="selection-footer"><div class="selected-info"><span class="selected-marker">✦</span><div><small>YOUR SHINOBI</small><strong id="selectedName">NARUTO UZUMAKI</strong></div><span class="selected-village" id="selectedVillage">HIDDEN LEAF</span></div><button class="fight-button" id="fightButton">ENTER THE ARENA <span>→</span></button></div>
+      </div>
+      <footer class="menu-footer"><span>© SHINOBI CLASH</span><span>FIGHT WITH HONOR &nbsp; • &nbsp; NEVER GIVE UP</span><span>TOUCH / KEYBOARD READY</span></footer>
+    </section>
+
+    <section id="fightScreen" class="screen fight-screen hidden" aria-label="Fight arena">
+      <div class="arena-top">
+        <div class="fighter-hud player-hud"><div class="hud-name"><span class="hud-tag">P1</span><strong id="playerName">NARUTO</strong></div><div class="health-track"><div class="health-fill player-health" id="playerHealth"></div></div><div class="hud-sub">HIDDEN LEAF <span id="playerWins">○ ○ ○</span></div></div>
+        <div class="round-clock"><span>ROUND <b id="roundNumber">01</b></span><strong id="timer">60</strong><small>BEST OF 3</small></div>
+        <div class="fighter-hud enemy-hud"><div class="hud-name"><strong id="enemyName">SASUKE</strong><span class="hud-tag cpu-tag">CPU</span></div><div class="health-track"><div class="health-fill enemy-health" id="enemyHealth"></div></div><div class="hud-sub">RIVAL SHINOBI <span id="enemyWins">○ ○ ○</span></div></div>
+        <button class="exit-button" id="backButton" aria-label="Back to selection">✕</button>
+      </div>
+      <div class="arena-wrap"><canvas id="gameCanvas" aria-label="Ninja fighting game"></canvas><div class="fight-announcer" id="announcer">READY?</div><div class="match-result hidden" id="matchResult"><span class="result-kicker">THE ARENA FALLS SILENT</span><strong id="resultTitle">VICTORY</strong><p id="resultText">A shinobi's will cannot be broken.</p><button id="rematchButton">FIGHT AGAIN <span>↻</span></button><button class="result-menu" id="resultMenu">CHANGE SHINOBI</button></div></div>
+      <div class="controls-bar"><div class="control-tip"><kbd>←</kbd><kbd>→</kbd> MOVE <kbd>↑</kbd> JUMP</div><div class="control-tip"><kbd>J</kbd> STRIKE <kbd>K</kbd> NINJUTSU <kbd>L</kbd> GUARD</div><div class="control-tip mobile-tip">TOUCH CONTROLS <span>↓</span></div></div>
+      <div class="touch-controls" aria-label="Touch controls"><div class="move-pad"><button data-action="left" aria-label="Move left">◀</button><button data-action="right" aria-label="Move right">▶</button><button data-action="jump" aria-label="Jump">▲</button></div><div class="action-pad"><button class="guard-touch" data-action="guard">GUARD</button><button class="special-touch" data-action="special">忍</button><button class="attack-touch" data-action="attack">HIT</button></div></div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
